@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace adm
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("爬");
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button1.Text = "不喜欢";
+            button3.Text = "喜欢";
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button3.Text = "不喜欢";
+            button1.Text = "喜欢";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("喜欢你🐴 呢喜欢");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("喜欢你🐴 呢喜欢");
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int x = random.Next(0, base.Size.Width - this.button4.Size.Width);
+            int y = random.Next(0, base.ClientSize.Height - this.button4.Size.Height);
+            Point location = new Point(x, y);
+            this.button4.Location = location;
+
+
+
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("    ", "平胸怪", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                MessageBox.Show("    ");
+
+            }
+        }
+    }
+}
